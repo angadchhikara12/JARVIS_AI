@@ -1,0 +1,7 @@
+pyaudio
+torch
+transformers
+pyttsx3
+tensorflow
+SpeechRecognition
+google

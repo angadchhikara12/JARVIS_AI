@@ -1,55 +1,24 @@
-import pyttsx3
-import speech_recognition as sr
-from transformers.pipelines import pipeline
-engine = pyttsx3.init()
-voices = engine.getProperty('voices')
-engine.setProperty("voice", voices[0].id)
+from Agent import *
+from Listen import listen
+from Speak import speak
 
+def main():
+    while True:
+        command = listen()
+        print(f"User said: {command}")
+        if command.lower() in ["exit", "quit", "stop"]:
+            speak("Goodbye!")
+            break
+        
 
-def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+        full_response = response(command)
+        text, _ = code_seprator(full_response)
 
-def listen():
-    r = sr.Recognizer()
-    with sr.Microphone as source:
-        print("Listening ...")
-        r.adjust_for_ambient_noise(source)
-        audio = r.listen()
-        try:
-            print("Recognizing ...")
-            text = r.recognize_google(audio)
-            print(f"You: {text}")
-        except Exception as e:
-            print(f"Error Details: {e}")
-            speak("An Error Occured. Please check the Error Details")
-            return ""
-    return text
+        # Print the full response (text + code as returned by Jarvis)
+        print(f"\nAgent full response:\n{full_response}\n")
 
-
-def AI(command):
-    pipe = pipeline("text-generation", model="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
-
-    prompt = (
-        {"role":"system", "content":"Your name is Jarvis, an AI model inspired from movie Iron Man. Your job is to be ethical hacking assistant on Windows OS."},
-        {"role":"user", "content":f"{command}"}
-    )
-
-    result = pipe(prompt)
-    # Jsonify the response and extract the assistant's content
-    for message in result[0]["generated_text"]:
-        if message["role"] == "assistant":
-            reply = message["content"]
-            return reply
-
-
-# Just a test. Nothing Serious
-# response = AI("Who are you?")
-# print(response)
+        # Speak only the textual part
+        speak(text)
 
 if __name__ == "__main__":
-    # userInput = listen().lower()
-    userInput = "Who are you?"
-    output = AI(userInput)
-    speak(output)
-    print(output)
+    main()
