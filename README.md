@@ -1,18 +1,36 @@
-# JARVIS
+# 🧠 JARVIS — Voice-Interactive AI Assistant
 
-Yes, it must be a well-known name. I am pretty sure that everyone knows what JARVIS is. If you don't, then let me expose this thing to everyone. It is an AI model that actually talks like J.A.R.V.I.S from the Iron Man movies and Avengers, probably🤷🏻. So what this AI Model does is it takes user input from the mic and returns the response through the speaker by speaking —if you don't have a mic or speaker or both, not my problem. Just kidding, I will try to include as my updates/upgrades as I can in further updated versions.
+**JARVIS** is inspired by the iconic AI from Marvel’s *Iron Man* and *Avengers* movies.  
+This project brings a similar experience to your system — an intelligent, conversational voice assistant powered by modern AI.
 
-### Thanks a lot for using/forking my project and making it cooler 
-⚠️Warning: This repository is licensed under Creative Commons Attribution (CC-BY 4.0). If you remixed this project, make sure to give me, the author, the credit using @angadchhikara12. ⚠️
+JARVIS uses **Gemini 2.0** for natural language understanding and response generation, and **ElevenLabs v2** for realistic, human-like voice output. The assistant listens through your microphone and responds through your speakers to create an immersive voice-based interaction.
 
-If you don't know how to give credit, just copy and paste this line: `This Software/Project is remixed from the project JARVIS by @angadchhikara12`
-###
+If your device does not have a microphone or speaker, don’t worry — upcoming versions will include additional interaction modes for improved accessibility.
 
-Author: Angad Chhikara
+---
 
-[Github](https://www.github.com/angadchhikara12)
+### 🙌 Thank You for Using or Forking This Project
 
-[Dev.to](https://vibe.forem.com/angadchhikara12)
+Your interest and contributions help this project grow! If you extend, enhance, or remix this project, that’s awesome — just make sure to follow the license attribution requirement below.
 
-[Discord](https://www.discord.com/users/1076654095181553664)
+---
 
+### ⚠️ License Notice — Creative Commons Attribution 4.0 (CC-BY-4.0)
+
+This repository is licensed under **CC-BY-4.0**, which requires attribution if you remix, reuse, or build upon this project.
+
+📌 **How to Give Credit (Copy & Paste):**
+
+<pre>This software/project is remixed from the project "JARVIS" by @angadchhikara12.</pre>
+
+Attribution must include the original author: **@angadchhikara12**
+
+---
+
+### 👤 Author
+
+**Angad Chhikara**
+
+🌐 GitHub: https://github.com/angadchhikara12  
+✍️ Dev.to: https://vibe.forem.com/angadchhikara12  
+💬 Discord: https://discord.com/users/1076654095181553664
