@@ -1,4 +1,4 @@
-name: Protect .env File
+name: Remove .env from Git Tracking
 
 on:
   push:
@@ -7,15 +7,19 @@ on:
   pull_request:
 
 jobs:
-  prevent-env-commit:
+  untrack-env:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Check for .env files
+      - name: Remove .env if tracked
         run: |
           if git ls-files | grep -q "\.env"; then
-            echo "::error file=.env::The .env file should not be committed!"
-            exit 1
+            echo "Found .env file in repo. Removing from Git tracking..."
+            git rm --cached .env
+            git commit -m "Stop tracking .env"
+            git push origin main
+          else
+            echo ".env file not tracked. Nothing to do."
           fi
